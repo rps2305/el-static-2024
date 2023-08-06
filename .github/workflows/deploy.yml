@@ -21,7 +21,7 @@ jobs:
           npm install
           npm run generate
           git config --local user.email "ronald.punt@bamfestival.nl"
-          git config --local user.name "Ronald Punt"
+          git config --local user.name "rps2305"
           npm run deploy
       - name: Init new repo in $BUILD_FOLDER and commit generated files
         run: |
