@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     nojekyll: true, //not working on this version
     fallback: '404.html',
   },
-  ssr: false, //When false
+  
   target: 'static',
   modules: ['@nuxtjs/tailwindcss'],
   tailwindcss: {
