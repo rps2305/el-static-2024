@@ -4,7 +4,7 @@ on:
     branches: 
       - main
 env:
-  BUILD_FOLDER: .output/public # or .output/public/yourrepositorynamee/
+  BUILD_FOLDER: ./dist # or .output/public/yourrepositorynamee/
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,19 +20,12 @@ jobs:
       - run: |
           npm install
           npm run generate
-          git config --local user.email "ronald.punt@bamfestival.nl"
-          git config --local user.name "rps2305"
-          npm run deploy
+
       - name: Init new repo in $BUILD_FOLDER and commit generated files
         run: |
           grep -rnwl "<link rel=\"prefetch\"" $BUILD_FOLDER | xargs sed -i 's$<link rel="prefetch" href="[^"]*\.\(jpg\|png\|webm\|jpeg\|ttg\|svg\|gif\)">$$g'
           cd $BUILD_FOLDER
           touch .nojekyll
-          git init
-          git add -A
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m 'deploy'
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
