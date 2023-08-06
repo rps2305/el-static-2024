@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   target: 'static',
   router: {
-    base: '/el-static-2024/',
+    base: '/el-static-2024/'
+  },
   modules: ['@nuxtjs/tailwindcss'],
   tailwindcss: {
     viewer: false,
