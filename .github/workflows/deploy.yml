@@ -1,9 +1,10 @@
 name: Deploy to GitHub pages
 on:
   push:
-    branches: main
+    branches: 
+      - main
 env:
-  BUILD_FOLDER: .output/public # or .output/public/yourrepositoryname/
+  BUILD_FOLDER: .output/public # or .output/public/yourrepositorynamee/
 jobs:
   build:
     runs-on: ubuntu-latest
